@@ -35,10 +35,10 @@ function[bool] = comparison(currRow, guesses, expectedLen, correctGuess)
    %     lettercase = 0;
         % check if guessed character is in mystery word
         for iLetters = 1:expectedLen
-      %      fprintf("--------%c=%c?----\n", guesses(currRow, iChars), correctGuess(iLetters));
+       %     fprintf("--%c=%c?--\n", guesses(currRow, iChars), correctGuess(iLetters));
             if guesses(currRow, iChars) == correctGuess(iLetters)
-            %    fprintf("---%c=%c?---", guesses(currRow, iChars), correctGuess(iLetters));
-                if iLetters == iChars && ft_issame(guesses(currRow, iChars), correctGuess(iChars))
+                fprintf("---%c (%d)==%c (%d)?---", guesses(currRow, iChars), iChars, correctGuess(iLetters), iLetters);
+                if iLetters == iChars && ft_issame(guesses(currRow, iChars), correctGuess(iLetters))
                     print_case(1, iChars, guesses, currRow);
                  %   blank_guess(iLetters) = correctGuess(iLetters);
                     break;
